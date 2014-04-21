@@ -34,7 +34,7 @@ class SensuDashboard < Sinatra::Base
       rescue => e
         events = '{}'
       end
-      data = JSON.parse(service.to_json)
+      data = service.attributes
       data[:allevents] = JSON.parse(events)
       output << data
     end
